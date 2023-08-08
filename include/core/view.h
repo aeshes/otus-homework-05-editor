@@ -8,16 +8,9 @@
 class View : public Observer
 {
 public:
-    View(std::shared_ptr<Model> model)
-    {
-        this->model = model;
-        this->model->addObserver(this);
-    }
+    View(std::shared_ptr<Model> model);
 
-    void update() override
-    {
-        model->draw();
-    }
+    void update() override;
 
 private:
     std::shared_ptr<Model> model;

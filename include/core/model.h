@@ -7,7 +7,7 @@
 #include <memory>
 #include <string>
 
-class Model
+class Model : public Observable
 {
 public:
     Model() = default;
@@ -20,7 +20,7 @@ public:
     virtual void draw() = 0;
 };
 
-class DrawModel : public Model, public Observable
+class DrawModel : public Model
 {
 public:
     DrawModel() = default;

@@ -17,7 +17,10 @@ add_executable(editor
     include/core/model.h
     include/core/observer.h
     include/core/view.h
+    include/core/controller.h
     src/model.cpp
+    src/view.cpp
+    src/controller.cpp
     src/main.cpp
 )
 
