@@ -1,6 +1,6 @@
 #include "core/view.h"
 
-View::View(std::shared_ptr<Model> model)
+View::View(Model* model)
 {
     this->model = model;
     this->model->addObserver(this);
@@ -8,5 +8,8 @@ View::View(std::shared_ptr<Model> model)
 
 void View::update()
 {
-    model->draw();
+    for (auto object : model->document().data())
+    {
+        object->draw();
+    }
 }

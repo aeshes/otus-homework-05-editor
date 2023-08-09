@@ -35,12 +35,9 @@ public:
 
     }
 
-    void draw()
+    auto data()
     {
-        for (auto& object : shapes)
-        {
-            object->draw();
-        }
+        return shapes;
     }
 
 private:

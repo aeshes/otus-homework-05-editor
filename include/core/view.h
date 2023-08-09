@@ -8,10 +8,10 @@
 class View : public Observer
 {
 public:
-    View(std::shared_ptr<Model> model);
+    View(Model* model);
 
     void update() override;
 
 private:
-    std::shared_ptr<Model> model;
+    Model* model;
 };

@@ -1,6 +1,6 @@
 #include "core/controller.h"
 
-Controller::Controller(std::shared_ptr<Model> model, std::shared_ptr<View> view)
+Controller::Controller(Model* model, View* view)
 {
     this->model = model;
     this->view = view;
