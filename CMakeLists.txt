@@ -27,6 +27,7 @@ add_executable(editor
     include/shapes/line.h
     include/shapes/triangle.h
     include/shapes/shapes.h
+    include/shapes/creator.h
     include/core/model.h
     include/core/observer.h
     include/core/view.h
