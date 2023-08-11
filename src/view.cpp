@@ -1,15 +1,12 @@
 #include "core/view.h"
 
-View::View(Model* model)
+void View::setModel(Document *document)
 {
-    this->model = model;
-    this->model->addObserver(this);
+    this->document = document;
+    this->document->addObserver(this);
 }
 
 void View::update()
 {
-    for (auto object : model->document().data())
-    {
-        object->draw();
-    }
+    document->draw();
 }

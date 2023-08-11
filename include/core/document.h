@@ -1,45 +1,52 @@
 #pragma once
 
-#include <vector>
-#include <memory>
-#include <string>
 #include <iostream>
+#include <list>
+#include <memory>
+#include <format>
 
 #include "shapes/shape.h"
+#include "core/observer.h"
 
-class Document
+class Document : public Observable
 {
 public:
-    void Clear()
+    void clear()
     {
         shapes.clear();
     }
 
-    void Import(const std::string& fileName)
+    void open(const std::string& fileName)
     {
-        std::cout << "Imported document from file : " << fileName << std::endl;
+        std::cout << std::format("Opened document {}\n", fileName);
+        notify();
     }
 
-    void Export(const std::string& fileName)
+    void save(const std::string& fileName)
     {
-        std::cout << "Exported document to file : " << fileName << std::endl;
+        std::cout << std::format("Saved document {}\n", fileName);
     }
 
     void addShape(std::shared_ptr<Shape> shape)
     {
         shapes.push_back(shape);
+        notify();
     }
 
     void removeShape(std::shared_ptr<Shape> shape)
     {
-
+        shapes.remove(shape);
+        notify();
     }
 
-    auto data()
+    void draw()
     {
-        return shapes;
+        for (const auto& object : shapes)
+        {
+            object->draw();
+        }
     }
 
 private:
-    std::vector<std::shared_ptr<Shape>> shapes;
+    std::list<std::shared_ptr<Shape>> shapes;
 };

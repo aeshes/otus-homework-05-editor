@@ -1,17 +1,18 @@
 #pragma once
 
-#include "core/model.h"
 #include "core/observer.h"
+#include "core/document.h"
 
 #include <memory>
 
 class View : public Observer
 {
 public:
-    View(Model* model);
+    View() = default;
 
+    void setModel(Document* document);
     void update() override;
 
 private:
-    Model* model;
+    Document* document;
 };

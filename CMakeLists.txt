@@ -28,17 +28,19 @@ add_executable(editor
     include/shapes/triangle.h
     include/shapes/shapes.h
     include/shapes/creator.h
-    include/core/model.h
     include/core/observer.h
     include/core/view.h
     include/core/controller.h
-    src/model.cpp
     src/view.cpp
     src/controller.cpp
     src/main.cpp
 )
 
 target_include_directories(editor PRIVATE include)
+
+target_compile_options(editor PRIVATE
+    -fmodules-ts
+)
 
 install(TARGETS editor RUNTIME DESTINATION bin)
 
