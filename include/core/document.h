@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include <list>
 #include <memory>
 
@@ -39,12 +38,9 @@ public:
         notify();
     }
 
-    void draw()
+    auto& getShapes()
     {
-        for (const auto& object : shapes)
-        {
-            object->draw();
-        }
+        return shapes;
     }
 
 private:
