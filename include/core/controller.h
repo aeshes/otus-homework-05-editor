@@ -1,10 +1,16 @@
 #pragma once
 
 #include <string>
+#include <memory>
 
-#include "core/view.h"
 #include "core/document.h"
 
+class View;
+
+/* \brief Обязанности по обработке входящих системных сообщений необходимо делегировать специальному объекту Controller'у.
+ * Controller — это объект, который отвечает за обработку системных событий, и при этом не относится к интерфейсу пользователя.
+ * Controller определяет методы для выполнения системных операций.
+ */
 class Controller
 {
 public:
@@ -13,10 +19,8 @@ public:
     void createDocument();
     void openDocument(const std::string& fileName);
     void saveDocument(const std::string& fileName);
-
-    void addCircle(int x, int y, int radius);
-    void addRectangle(int x, int y, int width, int height);
-    void addLine(int x1, int y1, int x2, int y2);
+    void addShape(std::shared_ptr<Shape> shape);
+    void removeShape(std::shared_ptr<Shape> shape);
 
 private:
     Document* document;

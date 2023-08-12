@@ -8,6 +8,8 @@
 #include "shapes/shapes.h"
 #include "core/observer.h"
 
+/// \brief Document - это модель в паттерне MVC
+
 class Document : public Observable
 {
 public:

@@ -21,9 +21,7 @@ add_executable(editor
     include/core/document.h
     include/shapes/shapes.h
     include/core/observer.h
-    include/core/view.h
     include/core/controller.h
-    src/view.cpp
     src/controller.cpp
     src/main.cpp
 )

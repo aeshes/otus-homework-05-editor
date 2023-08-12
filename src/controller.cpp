@@ -18,22 +18,12 @@ void Controller::openDocument(const std::string& fileName)
     document->open(fileName);
 }
 
-void Controller::saveDocument(const std::string& fileName)
+void Controller::addShape(std::shared_ptr<Shape> shape)
 {
-    document->save(fileName);
+    document->addShape(shape);
 }
 
-void Controller::addRectangle(int x, int y, int width, int height)
+void Controller::removeShape(std::shared_ptr<Shape> shape)
 {
-    document->addShape(std::make_shared<Rectangle>(x, y, width, height));
-}
-
-void Controller::addCircle(int x, int y, int radius)
-{
-    document->addShape(std::make_shared<Circle>(x, y, radius));
-}
-
-void Controller::addLine(int x1, int y1, int x2, int y2)
-{
-    document->addShape(std::make_shared<Line>(x1, y1, x2, y2));
+    document->removeShape(shape);
 }
