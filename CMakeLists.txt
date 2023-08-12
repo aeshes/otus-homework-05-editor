@@ -19,15 +19,7 @@ include(CPack)
 
 add_executable(editor
     include/core/document.h
-    include/shapes/shape.h
-    include/shapes/circle.h
-    include/shapes/point.h
-    include/shapes/rectangle.h
-    include/shapes/color.h
-    include/shapes/line.h
-    include/shapes/triangle.h
     include/shapes/shapes.h
-    include/shapes/creator.h
     include/core/observer.h
     include/core/view.h
     include/core/controller.h

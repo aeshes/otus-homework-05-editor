@@ -1,5 +1,6 @@
 #include "core/controller.h"
-#include "shapes/creator.h"
+
+#include <memory>
 
 Controller::Controller(Document* document, View* view)
 {
@@ -24,15 +25,15 @@ void Controller::saveDocument(const std::string& fileName)
 
 void Controller::addRectangle(int x, int y, int width, int height)
 {
-    document->addShape(ShapesCreator::createRectangle(x, y, width, height));
+    document->addShape(std::make_shared<Rectangle>(x, y, width, height));
 }
 
 void Controller::addCircle(int x, int y, int radius)
 {
-    document->addShape(ShapesCreator::createCircle(x, y, radius));
+    document->addShape(std::make_shared<Circle>(x, y, radius));
 }
 
 void Controller::addLine(int x1, int y1, int x2, int y2)
 {
-    document->addShape(ShapesCreator::createLine(x1, y1, x2, y2));
+    document->addShape(std::make_shared<Line>(x1, y1, x2, y2));
 }

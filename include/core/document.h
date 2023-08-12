@@ -5,7 +5,7 @@
 #include <memory>
 #include <format>
 
-#include "shapes/shape.h"
+#include "shapes/shapes.h"
 #include "core/observer.h"
 
 class Document : public Observable
