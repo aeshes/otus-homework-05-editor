@@ -3,7 +3,6 @@
 #include <iostream>
 #include <list>
 #include <memory>
-#include <format>
 
 #include "shapes/shapes.h"
 #include "core/observer.h"
