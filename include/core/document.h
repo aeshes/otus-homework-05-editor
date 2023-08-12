@@ -20,13 +20,12 @@ public:
 
     void open(const std::string& fileName)
     {
-        std::cout << std::format("Opened document {}\n", fileName);
         notify();
     }
 
     void save(const std::string& fileName)
     {
-        std::cout << std::format("Saved document {}\n", fileName);
+
     }
 
     void addShape(std::shared_ptr<Shape> shape)
