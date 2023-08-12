@@ -12,6 +12,12 @@ jobs:
     permissions: write-all
     steps:
       - uses: actions/checkout@v2
+      - name: Install GCC v13
+        uses: egor-tenshin/setup-gcc@v13
+        with:
+          version: 13
+      - name: Check installed GCC version
+        run: gcc -
       - run: sudo apt-get update && sudo apt-get install libgtest-dev -y
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
