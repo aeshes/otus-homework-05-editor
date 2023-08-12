@@ -38,7 +38,7 @@ public:
         notify();
     }
 
-    auto& getShapes()
+    const auto& getShapes()
     {
         return shapes;
     }
