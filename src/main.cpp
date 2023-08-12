@@ -2,9 +2,6 @@
 #include "core/observer.h"
 #include "shapes/shapes.h"
 
-#include <vector>
-#include <memory>
-
 
 /// \brief Интерфейс пользователя - это вид в паттерне MVC
 class View : public Observer
