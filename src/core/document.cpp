@@ -3,16 +3,17 @@ module;
 #include <memory>
 #include <list>
 
-export module core.document;
+import shapes.shapes;
+import core.observer;
 
-import shapes;
+export module core.document;
 
 export class Document
 {
 public:
     void clear();
-    void openDocument(const std::string& fileName);
-    void saveDocument(const std::string& fileName);
+    void open(const std::string& fileName);
+    void save(const std::string& fileName);
     void addShape(std::shared_ptr<Shape> shape);
     void removeShape(std::shared_ptr<Shape> shape);
 
@@ -25,12 +26,12 @@ void Document::clear()
     shapes.clear();
 }
 
-void Document::openDocument(const std::string &fileName)
+void Document::open(const std::string& fileName)
 {
 
 }
 
-void Document::saveDocument(const std::string &fileName)
+void Document::save(const std::string& fileName)
 {
 
 }

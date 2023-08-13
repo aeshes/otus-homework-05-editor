@@ -2,7 +2,7 @@ module;
 
 #include <iostream>
 
-export module shapes;
+export module shapes.shapes;
 
 
 export enum class Color
@@ -28,7 +28,10 @@ public:
 
     virtual ~Shape() = default;
 
-    virtual void draw() = 0;
+    virtual void draw()
+    {
+
+    }
 
 protected:
     Color color;

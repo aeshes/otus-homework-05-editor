@@ -1,6 +1,6 @@
-#include "core/controller.h"
-#include "core/observer.h"
-#include "shapes/shapes.h"
+import core.controller;
+import core.observer;
+import shapes.shapes;
 
 
 /// \brief Интерфейс пользователя - это вид в паттерне MVC

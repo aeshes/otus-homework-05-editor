@@ -18,11 +18,10 @@ include(InstallRequiredSystemLibraries)
 include(CPack)
 
 add_executable(editor
-    include/core/controller.h
     src/shapes/shapes.cpp
     src/core/observer.cpp
     src/core/document.cpp
-    src/controller.cpp
+    src/core/controller.cpp
     src/main.cpp
 )
 
