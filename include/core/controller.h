@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "core/document.h"
+import document;
 
 class Controller
 {
