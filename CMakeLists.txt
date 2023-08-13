@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VERSION 0.0.${PATCH_VERSION})
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(Editor VERSION ${PROJECT_VERSION})
@@ -18,10 +18,10 @@ include(InstallRequiredSystemLibraries)
 include(CPack)
 
 add_executable(editor
-    include/core/document.h
-    include/shapes/shapes.h
-    include/core/observer.h
     include/core/controller.h
+    src/shapes/shapes.cpp
+    src/core/observer.cpp
+    src/core/document.cpp
     src/controller.cpp
     src/main.cpp
 )
